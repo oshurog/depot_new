@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+  default_scope :order => 'title'
+
   def index
     @products = Product.all
 

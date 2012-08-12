@@ -1,0 +1,16 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Your pragmatic catalog</h1>
+
+<% @product.each do |product| %>
+	<div class="entry">
+		<%= image_tag(product.image_url) %>
+		<h3><%= product.title %></h3>
+		<%= sanitize(product.description) %>
+		<div class="">
+			<span class="price"><%= number_to_currency(product.price, :locale => :de) %></span>
+		</div>
+	</div>
+<% end %>
